@@ -9,7 +9,7 @@
 import CoreData
 import Combine
 
-final class AddCoreDataSubscription<S: Subscriber>: Subscription where S.Failure == Error, S.Input == Never {
+final class SaveCoreDataSubscription<S: Subscriber>: Subscription where S.Failure == Error, S.Input == Never {
     // MARK: - Properties
     private var subscriber: S?
     private let context: NSManagedObjectContext
@@ -24,13 +24,11 @@ final class AddCoreDataSubscription<S: Subscriber>: Subscription where S.Failure
     
     // MARK: - Public Methods
     func request(_ demand: Subscribers.Demand) {
-        defer {
-            self.cancel()
-            self.currentDemand -= 1
-        }
+        defer { self.cancel() }
         
         self.currentDemand += demand
         guard self.currentDemand > 0 else { return }
+        self.currentDemand -= 1
         
         guard self.context.hasChanges else {
             self.subscriber?.receive(completion: .finished)

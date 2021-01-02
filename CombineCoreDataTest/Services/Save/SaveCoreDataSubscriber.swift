@@ -9,7 +9,7 @@
 import CoreData
 import Combine
 
-final class AddCoreDataSubscriber<Input, Failure: Error>: Subscriber, Cancellable {
+final class SaveCoreDataSubscriber<Input, Failure: Error>: Subscriber, Cancellable {
     // MARK: - Properties
     private var subscription: Subscription?
     private let receiveValue: (Input) -> Void
@@ -23,7 +23,7 @@ final class AddCoreDataSubscriber<Input, Failure: Error>: Subscriber, Cancellabl
     
     // MARK: - Public Methods
     func receive(subscription: Subscription) {
-        subscription.request(.unlimited)
+        subscription.request(.max(1))
         self.subscription = subscription
     }
     

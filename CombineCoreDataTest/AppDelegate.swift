@@ -32,8 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             person.surname = "Vlad"
             person.age = 35
             
-            let publisher = AddCoreDataPublisher(context: context)
-            self.subscriber = publisher.addCoreDataSink(receiveCompletion: { (completionResult) in
+            let publisher = SaveCoreDataPublisher(context: context)
+            self.subscriber = publisher.saveCoreDataSink(receiveCompletion: { (completionResult) in
                 switch completionResult {
                 case .finished:
                     print("Finished with success")

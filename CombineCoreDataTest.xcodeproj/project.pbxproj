@@ -15,9 +15,9 @@
 		B828F17725684EDF00EEE347 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B828F17625684EDF00EEE347 /* Assets.xcassets */; };
 		B828F17A25684EDF00EEE347 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B828F17925684EDF00EEE347 /* Preview Assets.xcassets */; };
 		B828F17D25684EDF00EEE347 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B828F17B25684EDF00EEE347 /* LaunchScreen.storyboard */; };
-		B828F186256ADDEF00EEE347 /* AddCoreDataPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828F185256ADDEF00EEE347 /* AddCoreDataPublisher.swift */; };
-		B828F18A256ADE7E00EEE347 /* AddCoreDataSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828F189256ADE7E00EEE347 /* AddCoreDataSubscription.swift */; };
-		B828F18C256ADFF900EEE347 /* AddCoreDataSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828F18B256ADFF900EEE347 /* AddCoreDataSubscriber.swift */; };
+		B828F186256ADDEF00EEE347 /* SaveCoreDataPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828F185256ADDEF00EEE347 /* SaveCoreDataPublisher.swift */; };
+		B828F18A256ADE7E00EEE347 /* SaveCoreDataSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828F189256ADE7E00EEE347 /* SaveCoreDataSubscription.swift */; };
+		B828F18C256ADFF900EEE347 /* SaveCoreDataSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828F18B256ADFF900EEE347 /* SaveCoreDataSubscriber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +31,9 @@
 		B828F17925684EDF00EEE347 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B828F17C25684EDF00EEE347 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B828F17E25684EDF00EEE347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B828F185256ADDEF00EEE347 /* AddCoreDataPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoreDataPublisher.swift; sourceTree = "<group>"; };
-		B828F189256ADE7E00EEE347 /* AddCoreDataSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoreDataSubscription.swift; sourceTree = "<group>"; };
-		B828F18B256ADFF900EEE347 /* AddCoreDataSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoreDataSubscriber.swift; sourceTree = "<group>"; };
+		B828F185256ADDEF00EEE347 /* SaveCoreDataPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCoreDataPublisher.swift; sourceTree = "<group>"; };
+		B828F189256ADE7E00EEE347 /* SaveCoreDataSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCoreDataSubscription.swift; sourceTree = "<group>"; };
+		B828F18B256ADFF900EEE347 /* SaveCoreDataSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCoreDataSubscriber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,19 +91,27 @@
 			isa = PBXGroup;
 			children = (
 				47F39A90256FF9AA00DA28AD /* CoreDataHandler.swift */,
-				B8E8A2D0259C9F660000D7A9 /* Add */,
+				B8E8A2D725A09AB90000D7A9 /* New Group */,
+				B8E8A2D0259C9F660000D7A9 /* Save */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		B8E8A2D0259C9F660000D7A9 /* Add */ = {
+		B8E8A2D0259C9F660000D7A9 /* Save */ = {
 			isa = PBXGroup;
 			children = (
-				B828F185256ADDEF00EEE347 /* AddCoreDataPublisher.swift */,
-				B828F189256ADE7E00EEE347 /* AddCoreDataSubscription.swift */,
-				B828F18B256ADFF900EEE347 /* AddCoreDataSubscriber.swift */,
+				B828F185256ADDEF00EEE347 /* SaveCoreDataPublisher.swift */,
+				B828F189256ADE7E00EEE347 /* SaveCoreDataSubscription.swift */,
+				B828F18B256ADFF900EEE347 /* SaveCoreDataSubscriber.swift */,
 			);
-			path = Add;
+			path = Save;
+			sourceTree = "<group>";
+		};
+		B8E8A2D725A09AB90000D7A9 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,12 +185,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B828F18A256ADE7E00EEE347 /* AddCoreDataSubscription.swift in Sources */,
+				B828F18A256ADE7E00EEE347 /* SaveCoreDataSubscription.swift in Sources */,
 				B828F16E25684ED600EEE347 /* AppDelegate.swift in Sources */,
 				B828F17325684ED700EEE347 /* CombineCoreDataTest.xcdatamodeld in Sources */,
 				B828F17525684ED700EEE347 /* ContentView.swift in Sources */,
-				B828F186256ADDEF00EEE347 /* AddCoreDataPublisher.swift in Sources */,
-				B828F18C256ADFF900EEE347 /* AddCoreDataSubscriber.swift in Sources */,
+				B828F186256ADDEF00EEE347 /* SaveCoreDataPublisher.swift in Sources */,
+				B828F18C256ADFF900EEE347 /* SaveCoreDataSubscriber.swift in Sources */,
 				47F39A91256FF9AA00DA28AD /* CoreDataHandler.swift in Sources */,
 				B828F17025684ED600EEE347 /* SceneDelegate.swift in Sources */,
 			);
