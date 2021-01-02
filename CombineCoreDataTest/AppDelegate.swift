@@ -33,14 +33,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             person.age = 35
             
             let publisher = SaveCoreDataPublisher(context: context)
-            self.subscriber = publisher.saveCoreDataSink(receiveCompletion: { (completionResult) in
-                switch completionResult {
-                case .finished:
-                    print("Finished with success")
-                case .failure(let error):
-                    print("Finished with error \(error)")
-                }
-            }, receiveValue: {_ in })
+//            self.subscriber = publisher.saveCoreDataSink(receiveCompletion: { (completionResult) in
+//                switch completionResult {
+//                case .finished:
+//                    print("Finished with success")
+//                case .failure(let error):
+//                    print("Finished with error \(error)")
+//                }
+//            }, receiveValue: {_ in })
         }
     }
 }

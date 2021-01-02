@@ -9,11 +9,10 @@
 import CoreData
 import Combine
 
-extension Publisher {
-    func saveCoreDataSink(receiveCompletion: @escaping (Subscribers.Completion<Self.Failure>) -> Void,
-                         receiveValue: @escaping (Self.Output) -> Void) -> AnyCancellable {
+extension SaveCoreDataPublisher {
+    func saveCoreDataSink(receiveCompletion: @escaping (Subscribers.Completion<Self.Failure>) -> Void) -> AnyCancellable {
         
-        let subscriber = SaveCoreDataSubscriber(receiveValue: receiveValue, receiveCompletion: receiveCompletion)
+        let subscriber = SaveCoreDataSubscriber<Self.Output, Self.Failure>(receiveCompletion: receiveCompletion)
         self.subscribe(subscriber)
         return AnyCancellable(subscriber)
     }
@@ -24,14 +23,14 @@ struct SaveCoreDataPublisher: Publisher {
     typealias Failure = Error
     
     // MARK: - Properties
-    let context: NSManagedObjectContext
+    private let context: NSManagedObjectContext
     
     // MARK: - Init
     init(context: NSManagedObjectContext) {
         self.context = context
     }
     
-    // MARK: - Public Methods
+    // MARK: - Public Method
     func receive<S>(subscriber: S) where S : Subscriber, Self.Failure == S.Failure, Self.Output == S.Input {
         let subscription = SaveCoreDataSubscription<S>(context: self.context, subscriber: subscriber)
         subscriber.receive(subscription: subscription)

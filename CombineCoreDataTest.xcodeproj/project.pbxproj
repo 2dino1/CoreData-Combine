@@ -18,6 +18,9 @@
 		B828F186256ADDEF00EEE347 /* SaveCoreDataPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828F185256ADDEF00EEE347 /* SaveCoreDataPublisher.swift */; };
 		B828F18A256ADE7E00EEE347 /* SaveCoreDataSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828F189256ADE7E00EEE347 /* SaveCoreDataSubscription.swift */; };
 		B828F18C256ADFF900EEE347 /* SaveCoreDataSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828F18B256ADFF900EEE347 /* SaveCoreDataSubscriber.swift */; };
+		B8E8A2DB25A09C310000D7A9 /* FetchCoreDataPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8A2DA25A09C310000D7A9 /* FetchCoreDataPublisher.swift */; };
+		B8E8A2DE25A09CAD0000D7A9 /* FetchCoreDataSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8A2DD25A09CAD0000D7A9 /* FetchCoreDataSubscription.swift */; };
+		B8E8A2E125A09CB60000D7A9 /* FetchCoreDataSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8A2E025A09CB60000D7A9 /* FetchCoreDataSubscriber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		B828F185256ADDEF00EEE347 /* SaveCoreDataPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCoreDataPublisher.swift; sourceTree = "<group>"; };
 		B828F189256ADE7E00EEE347 /* SaveCoreDataSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCoreDataSubscription.swift; sourceTree = "<group>"; };
 		B828F18B256ADFF900EEE347 /* SaveCoreDataSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCoreDataSubscriber.swift; sourceTree = "<group>"; };
+		B8E8A2DA25A09C310000D7A9 /* FetchCoreDataPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCoreDataPublisher.swift; sourceTree = "<group>"; };
+		B8E8A2DD25A09CAD0000D7A9 /* FetchCoreDataSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCoreDataSubscription.swift; sourceTree = "<group>"; };
+		B8E8A2E025A09CB60000D7A9 /* FetchCoreDataSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCoreDataSubscriber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				47F39A90256FF9AA00DA28AD /* CoreDataHandler.swift */,
-				B8E8A2D725A09AB90000D7A9 /* New Group */,
+				B8E8A2D725A09AB90000D7A9 /* Fetch */,
 				B8E8A2D0259C9F660000D7A9 /* Save */,
 			);
 			path = Services;
@@ -107,11 +113,14 @@
 			path = Save;
 			sourceTree = "<group>";
 		};
-		B8E8A2D725A09AB90000D7A9 /* New Group */ = {
+		B8E8A2D725A09AB90000D7A9 /* Fetch */ = {
 			isa = PBXGroup;
 			children = (
+				B8E8A2DA25A09C310000D7A9 /* FetchCoreDataPublisher.swift */,
+				B8E8A2DD25A09CAD0000D7A9 /* FetchCoreDataSubscription.swift */,
+				B8E8A2E025A09CB60000D7A9 /* FetchCoreDataSubscriber.swift */,
 			);
-			path = "New Group";
+			path = Fetch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,11 +195,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B828F18A256ADE7E00EEE347 /* SaveCoreDataSubscription.swift in Sources */,
+				B8E8A2E125A09CB60000D7A9 /* FetchCoreDataSubscriber.swift in Sources */,
 				B828F16E25684ED600EEE347 /* AppDelegate.swift in Sources */,
 				B828F17325684ED700EEE347 /* CombineCoreDataTest.xcdatamodeld in Sources */,
 				B828F17525684ED700EEE347 /* ContentView.swift in Sources */,
+				B8E8A2DE25A09CAD0000D7A9 /* FetchCoreDataSubscription.swift in Sources */,
 				B828F186256ADDEF00EEE347 /* SaveCoreDataPublisher.swift in Sources */,
 				B828F18C256ADFF900EEE347 /* SaveCoreDataSubscriber.swift in Sources */,
+				B8E8A2DB25A09C310000D7A9 /* FetchCoreDataPublisher.swift in Sources */,
 				47F39A91256FF9AA00DA28AD /* CoreDataHandler.swift in Sources */,
 				B828F17025684ED600EEE347 /* SceneDelegate.swift in Sources */,
 			);

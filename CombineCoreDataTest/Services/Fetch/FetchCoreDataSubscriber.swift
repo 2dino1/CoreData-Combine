@@ -1,31 +1,35 @@
 //
-//  AddCoreDataSubscriber.swift
+//  FetchCoreDataSubscriber.swift
 //  CombineCoreDataTest
 //
-//  Created by Sima Vlad Grigore on 22/11/2020.
-//  Copyright © 2020 Sima Vlad Grigore. All rights reserved.
+//  Created by Sima Vlad Grigore on 02/01/2021.
+//  Copyright © 2021 Sima Vlad Grigore. All rights reserved.
 //
 
-import CoreData
+import Foundation
 import Combine
+import CoreData
 
-final class SaveCoreDataSubscriber<Input, Failure: Error>: Subscriber, Cancellable {
+final class FetchCoreDataSubscriber<Input, Failure: Error>: Subscriber, Cancellable {
     // MARK: - Properties
     private var subscription: Subscription?
+    private let receiveValue: (Input) -> Void
     private let receiveCompletion: (Subscribers.Completion<Failure>) -> Void
     
     // MARK: - Init
-    init(receiveCompletion: @escaping (Subscribers.Completion<Failure>) -> Void) {
+    init(receiveValue: @escaping (Input) -> Void, receiveCompletion: @escaping (Subscribers.Completion<Failure>) -> Void) {
+        self.receiveValue = receiveValue
         self.receiveCompletion = receiveCompletion
     }
     
     // MARK: - Public Methods
     func receive(subscription: Subscription) {
-        subscription.request(.max(1))
         self.subscription = subscription
+        self.subscription?.request(.max(2))
     }
     
     func receive(_ input: Input) -> Subscribers.Demand {
+        self.receiveValue(input)
         return .none
     }
     
