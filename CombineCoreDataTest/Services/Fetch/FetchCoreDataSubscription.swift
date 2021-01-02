@@ -39,6 +39,7 @@ final class FetchCoreDataSubscription<S: Subscriber, FetchResultType: NSFetchReq
             self.currentDemand += self.subscriber?.receive(result) ?? .none
         } catch (let error){
             self.subscriber?.receive(completion: .failure(error))
+            return
         }
         
         guard self.currentDemand > 0 else { return }

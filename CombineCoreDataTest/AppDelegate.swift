@@ -13,9 +13,11 @@ import Combine
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Properties
-    private var subscriber: AnyCancellable?
+    private var subscribers: Set<AnyCancellable> = Set<AnyCancellable>()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+//        self.insertPerson()
+        self.fetchPersons()
         return true
     }
 
@@ -33,15 +35,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             person.age = 35
             
             let publisher = SaveCoreDataPublisher(context: context)
-//            self.subscriber = publisher.saveCoreDataSink(receiveCompletion: { (completionResult) in
-//                switch completionResult {
-//                case .finished:
-//                    print("Finished with success")
-//                case .failure(let error):
-//                    print("Finished with error \(error)")
-//                }
-//            }, receiveValue: {_ in })
+            publisher.sink { (completionResult) in
+                
+            } receiveValue: { _ in }.store(in: &self.subscribers)
         }
+    }
+    
+    private func fetchPersons() {
+        let publisher = FetchCoreDataPublisher<Person>(context: CoreDataHandler.shatedInstance().mainContext, entityName: "Person")
+        publisher.fetchCoreDataSink { (values) in
+            print("Values \(values)")
+        } receiveCompletion: { (completionResult) in
+            print("Completion result is \(completionResult)")
+        }.store(in: &self.subscribers)
     }
 }
 
