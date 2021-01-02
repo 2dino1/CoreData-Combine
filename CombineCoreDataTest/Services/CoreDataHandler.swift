@@ -7,6 +7,7 @@
 //
 
 import CoreData
+import Combine
 
 final class CoreDataHandler {
     // MARK: - Properties

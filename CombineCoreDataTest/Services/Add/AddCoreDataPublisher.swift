@@ -20,7 +20,7 @@ extension Publisher {
 }
 
 struct AddCoreDataPublisher: Publisher {
-    typealias Output = Void
+    typealias Output = Never
     typealias Failure = Error
     
     // MARK: - Properties
@@ -33,7 +33,7 @@ struct AddCoreDataPublisher: Publisher {
     
     // MARK: - Public Methods
     func receive<S>(subscriber: S) where S : Subscriber, Self.Failure == S.Failure, Self.Output == S.Input {
-        let subscription = AddCoreDataSubscription<S>(context: self.context)
+        let subscription = AddCoreDataSubscription<S>(context: self.context, subscriber: subscriber)
         subscriber.receive(subscription: subscription)
     }
 }

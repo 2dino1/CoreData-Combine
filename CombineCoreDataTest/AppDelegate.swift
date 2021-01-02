@@ -16,18 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var subscriber: AnyCancellable?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        self.insertPerson()
-        (0...6).publisher.subscribe(IntSubscriber())
-        
-        [1, 2, 3].publisher
-            .print()
-            .flatMap({ int in
-                return Array(repeating: int, count: 2).publisher
-            })
-            .sink(receiveValue: { value in
-                print("got: \(value)")
-            })
-        
         return true
     }
 
@@ -52,32 +40,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 case .failure(let error):
                     print("Finished with error \(error)")
                 }
-            }, receiveValue: {})
+            }, receiveValue: {_ in })
         }
     }
 }
 
-final class SecondViewController {
-    func viewDidLoad() {
-        CoreDataHandler.shatedInstance().mainContext
-    }
-}
+//protocol CoreDataConvertible {
+//    func fromCoreData(object: NSManagedObject) -> Self
+//    func toCoreData() -> Self
+//}
+//
+//class Magic {
+//    let objects: [CustomObject] = []
+//}
 
-class IntSubscriber: Subscriber {
-  typealias Input = Int
-  typealias Failure = Never
-
-  func receive(subscription: Subscription) {
-    print("Received subscription")
-    subscription.request(.unlimited)
-  }
-
-  func receive(_ input: Input) -> Subscribers.Demand {
-    print("Received input: \(input)")
-    return .none
-  }
-
-  func receive(completion: Subscribers.Completion<Never>) {
-    print("Received completion: \(completion)")
-  }
-}
+//struct CustomObject: CoreDataConvertible {
+//    func transform(object: NSManagedObject) -> CustomObject {
+//        let object = CustomObject()
+//        return object
+//    }
+//
+//    let id: NSManagedObjectID
+//}
+//
+//extension CustomObject: Equatable {
+//
+//}
