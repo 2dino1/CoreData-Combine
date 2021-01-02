@@ -21,6 +21,9 @@
 		B8E8A2DB25A09C310000D7A9 /* FetchCoreDataPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8A2DA25A09C310000D7A9 /* FetchCoreDataPublisher.swift */; };
 		B8E8A2DE25A09CAD0000D7A9 /* FetchCoreDataSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8A2DD25A09CAD0000D7A9 /* FetchCoreDataSubscription.swift */; };
 		B8E8A2E125A09CB60000D7A9 /* FetchCoreDataSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8A2E025A09CB60000D7A9 /* FetchCoreDataSubscriber.swift */; };
+		B8E8A2EA25A0DD2A0000D7A9 /* DeleteCoreDataPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8A2E925A0DD2A0000D7A9 /* DeleteCoreDataPublisher.swift */; };
+		B8E8A2ED25A0DD370000D7A9 /* DeleteCoreDataSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8A2EC25A0DD370000D7A9 /* DeleteCoreDataSubscription.swift */; };
+		B8E8A2F025A0DD420000D7A9 /* DeleteCoreDataSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8A2EF25A0DD420000D7A9 /* DeleteCoreDataSubscriber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		B8E8A2DA25A09C310000D7A9 /* FetchCoreDataPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCoreDataPublisher.swift; sourceTree = "<group>"; };
 		B8E8A2DD25A09CAD0000D7A9 /* FetchCoreDataSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCoreDataSubscription.swift; sourceTree = "<group>"; };
 		B8E8A2E025A09CB60000D7A9 /* FetchCoreDataSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCoreDataSubscriber.swift; sourceTree = "<group>"; };
+		B8E8A2E925A0DD2A0000D7A9 /* DeleteCoreDataPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCoreDataPublisher.swift; sourceTree = "<group>"; };
+		B8E8A2EC25A0DD370000D7A9 /* DeleteCoreDataSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCoreDataSubscription.swift; sourceTree = "<group>"; };
+		B8E8A2EF25A0DD420000D7A9 /* DeleteCoreDataSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCoreDataSubscriber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 				47F39A90256FF9AA00DA28AD /* CoreDataHandler.swift */,
 				B8E8A2D725A09AB90000D7A9 /* Fetch */,
 				B8E8A2D0259C9F660000D7A9 /* Save */,
+				B8E8A2E825A0DD070000D7A9 /* Delete */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -121,6 +128,16 @@
 				B8E8A2E025A09CB60000D7A9 /* FetchCoreDataSubscriber.swift */,
 			);
 			path = Fetch;
+			sourceTree = "<group>";
+		};
+		B8E8A2E825A0DD070000D7A9 /* Delete */ = {
+			isa = PBXGroup;
+			children = (
+				B8E8A2E925A0DD2A0000D7A9 /* DeleteCoreDataPublisher.swift */,
+				B8E8A2EC25A0DD370000D7A9 /* DeleteCoreDataSubscription.swift */,
+				B8E8A2EF25A0DD420000D7A9 /* DeleteCoreDataSubscriber.swift */,
+			);
+			path = Delete;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,9 +219,12 @@
 				B8E8A2DE25A09CAD0000D7A9 /* FetchCoreDataSubscription.swift in Sources */,
 				B828F186256ADDEF00EEE347 /* SaveCoreDataPublisher.swift in Sources */,
 				B828F18C256ADFF900EEE347 /* SaveCoreDataSubscriber.swift in Sources */,
+				B8E8A2EA25A0DD2A0000D7A9 /* DeleteCoreDataPublisher.swift in Sources */,
 				B8E8A2DB25A09C310000D7A9 /* FetchCoreDataPublisher.swift in Sources */,
 				47F39A91256FF9AA00DA28AD /* CoreDataHandler.swift in Sources */,
 				B828F17025684ED600EEE347 /* SceneDelegate.swift in Sources */,
+				B8E8A2ED25A0DD370000D7A9 /* DeleteCoreDataSubscription.swift in Sources */,
+				B8E8A2F025A0DD420000D7A9 /* DeleteCoreDataSubscriber.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

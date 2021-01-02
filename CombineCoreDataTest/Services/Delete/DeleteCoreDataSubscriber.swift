@@ -1,15 +1,16 @@
 //
-//  AddCoreDataSubscriber.swift
+//  DeleteCoreDataSubscribers.swift
 //  CombineCoreDataTest
 //
-//  Created by Sima Vlad Grigore on 22/11/2020.
-//  Copyright © 2020 Sima Vlad Grigore. All rights reserved.
+//  Created by Sima Vlad Grigore on 02/01/2021.
+//  Copyright © 2021 Sima Vlad Grigore. All rights reserved.
 //
 
-import CoreData
+import Foundation
 import Combine
+import CoreData
 
-final class SaveCoreDataSubscriber<Input, Failure: Error>: Subscriber, Cancellable {
+final class DeleteCoreDataSubscriber<Input, Failure: Error>: Subscriber, Cancellable {
     // MARK: - Properties
     private var subscription: Subscription?
     private let receiveCompletion: (Subscribers.Completion<Failure>) -> Void
